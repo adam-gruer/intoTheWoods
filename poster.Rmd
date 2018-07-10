@@ -30,7 +30,7 @@ Here is a great resource
 - some book 
 
 ### Chart B
-
+![qr code](figures/qr.png)
 ```{r}
 
 ```
