@@ -48,7 +48,7 @@ qic(x = Month,
 
 Column {data-width=350}
 -----------------------------------------------------------------------
-![qr code](figures/qr_small.png)
+![qr code](figures/qr_new.png)
 
 **Some good reasons to use SPC are** 
 
