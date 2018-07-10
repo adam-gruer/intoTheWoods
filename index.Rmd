@@ -49,6 +49,7 @@ qic(x = Month,
 Column {data-width=350}
 -----------------------------------------------------------------------
 ![qr code](figures/qr_new.png)
+[View this project on github](https://github.com/adam-gruer/intoTheWoods)
 
 **Some good reasons to use SPC are** 
 
@@ -62,6 +63,7 @@ Column {data-width=350}
 - [NHS (UK) Making Data Count guide to SPC](https://improvement.nhs.uk/documents/2748/NHS_MAKING_DATA_COUNT_FINAL.pdf)
 - [qicharts2 ```r emo::ji("package")```  and vignettes by Jacob Anhoej  ](https://cran.r-project.org/web/packages/qicharts2/index.html)
 - [```r icon::fa_twitter_square()``` #plotthedots](https://twitter.com/search?q=%23plotthedots&src=typd)
+- [```r icon::fa_book()``` The Health Care Data Guide](https://www.wiley.com/en-us/The+Health+Care+Data+Guide%3A+Learning+from+Data+for+Improvement-p-9780470902585)
 
 **Sample Code**
 ```
