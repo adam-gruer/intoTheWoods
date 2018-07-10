@@ -22,12 +22,9 @@ visualisations found in many corporate performance report suites.
 The aim is to more clearly visualise change over time and also to differentiate 
 between between common cause and special cause variation.
 
-What we want to do is help managers and front line staff __see the woods for the trees__.  Help them focus on areas where performance is improving or deteriorating outside
-the range that could normally be expected.
-
+What we want to do is help managers and front line staff __see the woods for the trees__.
 
 ### An example in R using the qicharts2 ```r emo::ji("package")```
-
 
 ```{r}
 dataset <- read_csv("data/ready_for_care.csv")
@@ -38,32 +35,54 @@ qic(x = Month,
     y = RFC,
     chart = "i",
     data = filter(dataset, Month >= since_date),
-    title = "Control Chart - Ready for Care ESIS Waiting List",
-    subtitle = "Red line is the mean over the period. \nShaded area is the range of expected random variation",
+    title = "Control Chart - Elective Surgery Waiting List",
+    subtitle = "Red line is the mean over the period.\nGreen line is target. \nShaded area is the range of expected random variation",
     xlab = "",
     ylab = "Patients Waiting",
     caption = str_glue("Monthly data from {format(since_date, '%B %Y')} to {format(max(dataset$Month), '%B %Y')} ")
     )   +
-  geom_hline(yintercept = 1995 , color = "black")
+  geom_hline(yintercept = 1995 , color = "green")
 
 ```
 
 Column {data-width=350}
 -----------------------------------------------------------------------
-Here are some great resources
+![qr code](figures/qr_small.png)
 
-- [NHS (UK) Making Data Count guide to SPC](https://improvement.nhs.uk/documents/2748/NHS_MAKING_DATA_COUNT_FINAL.pdf) 
+**Some good reasons to use SPC are** 
+
+- SPC alerts us to a situation that may be deteriorating
+- SPC shows us if a situation is improving
+- SPC shows us how capable a system is of delivering a standard or target
+- SPC shows us if a process that we depend on is reliable and in control.
+
+**Here are some great resources**
+
+- [NHS (UK) Making Data Count guide to SPC](https://improvement.nhs.uk/documents/2748/NHS_MAKING_DATA_COUNT_FINAL.pdf)
+- [qicharts2 ```r emo::ji("package")```  and vignettes by Jacob Anhoej  ](https://cran.r-project.org/web/packages/qicharts2/index.html)
 - [```r icon::fa_twitter_square()``` #plotthedots](https://twitter.com/search?q=%23plotthedots&src=typd)
 
-### Chart B
-![qr code](figures/qr.png)
-```{r}
+**Sample Code**
+```
+library(qicharts2)
+library(tidyverse)
+dataset <- read_csv("data/ready_for_care.csv")
 
+since_date <- as.Date("2015-07-01")
+
+qic(x = Month, 
+    y = RFC,
+    chart = "i",
+    data = filter(dataset, Month >= since_date),
+    title = "Control Chart - Elective Surgery Waiting List",
+    subtitle = "Red line is the mean over the period.\nGreen line is target. \nShaded area is the range of expected random variation",,
+    xlab = "",
+    ylab = "Patients Waiting",
+    caption = str_glue("Monthly data from {format(since_date, '%B %Y')} to {format(max(dataset$Month), '%B %Y')} ")
+    )   +
+  geom_hline(yintercept = 1995 , color = "green")
 ```
 
-### Chart C
-![alt text](figures/wrong_story.gif)
-```{r}
 
-```
+
 
